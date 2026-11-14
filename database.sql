@@ -1,4 +1,4 @@
--- ===== MySQL =====
+
 CREATE DATABASE IF NOT EXISTS biblio_express CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE biblio_express;
 

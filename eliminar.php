@@ -1,5 +1,5 @@
 <?php
-/** Borrado seguro: solo por POST y con sentencia preparada. */
+
 session_start();
 require 'conexion.php';
 

@@ -1,10 +1,6 @@
 <?php
-/**
- * Conexión PDO modular.
- * Para cambiar de motor basta con modificar las variables de entorno
- * (o los valores por defecto de abajo): DB_DRIVER = mysql | pgsql
- */
-$driver = getenv('DB_DRIVER') ?: 'mysql';          // 'mysql' o 'pgsql'
+
+$driver = getenv('DB_DRIVER') ?: 'mysql';          
 $host   = getenv('DB_HOST')   ?: 'localhost';
 $port   = getenv('DB_PORT')   ?: ($driver === 'pgsql' ? '5432' : '3306');
 $dbname = getenv('DB_NAME')   ?: 'biblio_express';

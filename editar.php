@@ -19,7 +19,7 @@ if (!$libro) {
     exit;
 }
 
-// Si hubo error de validación, se muestran los datos que el usuario había escrito
+
 $errores = $_SESSION['errores'] ?? [];
 if (!empty($_SESSION['old'])) {
     $libro = array_merge($libro, $_SESSION['old']);

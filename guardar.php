@@ -1,5 +1,5 @@
 <?php
-/** Procesa el formulario POST: crea o actualiza según el campo "accion". */
+
 session_start();
 require 'conexion.php';
 
@@ -19,7 +19,7 @@ $datos = [
     'numero_paginas'  => trim($_POST['numero_paginas'] ?? ''),
 ];
 
-// ---------- Validaciones ----------
+
 $errores = [];
 if ($datos['titulo'] === '')  $errores[] = 'El título es obligatorio.';
 if ($datos['isbn'] === '')    $errores[] = 'El ISBN es obligatorio.';
@@ -48,7 +48,7 @@ if ($errores) {
     exit;
 }
 
-// ---------- Persistencia con sentencias preparadas ----------
+
 try {
     if ($accion === 'crear') {
         $sql = 'INSERT INTO libro (titulo, isbn, ano_publicacion, idioma, numero_paginas)
@@ -70,7 +70,7 @@ try {
     $_SESSION['mensaje'] = ['success', $accion === 'crear' ? 'Libro registrado correctamente.' : 'Libro actualizado correctamente.'];
     header('Location: index.php');
 } catch (PDOException $e) {
-    // 23000 = MySQL, 23505 = PostgreSQL (violación de UNIQUE)
+   
     if (in_array($e->getCode(), ['23000', '23505'], true)) {
         $_SESSION['errores'] = ['Ya existe un libro con ese ISBN.'];
     } else {

@@ -1,5 +1,5 @@
 <?php
-/** Formulario compartido por crear.php y editar.php. Espera: $libro (array), $accion, $errores (array) */
+
 ?>
 <?php if (!empty($errores)): ?>
     <div class="alert alert-danger">
